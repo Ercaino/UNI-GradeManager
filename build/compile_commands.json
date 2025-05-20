@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/workspaces/OPP-GradeManager/build",
+  "command": "/usr/bin/c++   -I/workspaces/OPP-GradeManager/include -I/workspaces/OPP-GradeManager/build    -std=gnu++17 -o CMakeFiles/OPP-GradeManager.dir/src/main.cpp.o -c /workspaces/OPP-GradeManager/src/main.cpp",
+  "file": "/workspaces/OPP-GradeManager/src/main.cpp"
+}
+]

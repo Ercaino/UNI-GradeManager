@@ -1,0 +1,3 @@
+/workspaces/OPP-GradeManager/build/CMakeFiles/rebuild_cache.dir
+/workspaces/OPP-GradeManager/build/CMakeFiles/edit_cache.dir
+/workspaces/OPP-GradeManager/build/CMakeFiles/OPP-GradeManager.dir

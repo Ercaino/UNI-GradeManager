@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/OPP-GradeManager/src/main.cpp
+iostream
+-
+CMakeConfig.h
+/workspaces/OPP-GradeManager/src/CMakeConfig.h
+
+CMakeConfig.h
+

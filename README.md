@@ -40,7 +40,7 @@ Each module consists of:
 
 ## Gallery
 
-<img align="right" width="600" src="./assets/gallery/Gallery-1.jpg" alt="Gallery">
+<img align="right" width="500" src="./assets/gallery/Gallery-1.jpg" alt="Gallery">
 
 <p float="left">
   <p float="left">
@@ -78,10 +78,10 @@ Each module consists of:
 ```
 
 <details open>
-    <img align="left" width="450" src="./assets/gallery/Gallery-2.jpg" alt="Gallery">
-    <img align="left" width="450" src="./assets/gallery/Gallery-3.jpg" alt="Gallery">
-    <img align="left" width="450" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
-    <img align="left" width="450" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-2.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-3.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
 </details>
 
 

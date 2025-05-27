@@ -27,10 +27,10 @@ Supports both a text-based interface and a GUI built with raylib + raygui.</p>
   </p>
 </p>
 
-<img align="left" width="500" src="./assets/gallery/Gallery-2.jpg" alt="Gallery">
-<img align="left" width="500" src="./assets/gallery/Gallery-3.jpg" alt="Gallery">
-<img align="left" width="500" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
-<img align="left" width="500" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
+<img align="left" width="450" src="./assets/gallery/Gallery-2.jpg" alt="Gallery">
+<img align="left" width="450" src="./assets/gallery/Gallery-3.jpg" alt="Gallery">
+<img align="left" width="450" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
+<img align="left" width="450" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
 
 
 

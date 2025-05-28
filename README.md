@@ -7,7 +7,7 @@
 Supports both a text-based interface and a GUI built with raylib + raygui.</p>
 
 <p align="center">
-    <a href="https://github.com/rose-pine/rose-pine-theme">
+    <a href="https://github.com/Ercaino/UNI-GradeManager">
         <img src="https://img.shields.io/badge/community-Edu%20Inc-26233a?labelColor=191724&style=for-the-badge" />
     </a>
 </p>
@@ -38,25 +38,20 @@ Each module consists of:
 - A `.cpp` file (implementation) containing function definitions
 
 ## 📁 Project Structure
+
 <!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
 <p align="right">
   <img src="https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg" /> 
 </p>
 
-<p float="left">
-  <p float="left">
-    <samp>
-      [Structure Diagram](./STRUCTURE.md)
-    </samp>
-  </p>
+<!-- ![Structure](./STRUCTURE.md) -->
+<p align="left">
+  <a href="./STRUCTURE.md">Structure Diagram<a>
 </p>
-
-
-
 
 ## Gallery
 
-<img align="right" width="500" src="./assets/gallery/Gallery-1.jpg" alt="Gallery">
+<img align="right" width="500" src="./assets/gallery/Gallery-1.jpg" alt="Gallery" />
 
 <p float="left">
   <p float="left">

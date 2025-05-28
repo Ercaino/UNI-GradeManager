@@ -117,24 +117,142 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named UNI-GradeManager
+# Target rules for targets named UNI-GradeManager-GUI
 
 # Build rule for target.
-UNI-GradeManager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UNI-GradeManager
-.PHONY : UNI-GradeManager
+UNI-GradeManager-GUI: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UNI-GradeManager-GUI
+.PHONY : UNI-GradeManager-GUI
 
 # fast build rule for target.
-UNI-GradeManager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/build
-.PHONY : UNI-GradeManager/fast
+UNI-GradeManager-GUI/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/build
+.PHONY : UNI-GradeManager-GUI/fast
+
+#=============================================================================
+# Target rules for targets named UNI-GradeManager-CLI
+
+# Build rule for target.
+UNI-GradeManager-CLI: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UNI-GradeManager-CLI
+.PHONY : UNI-GradeManager-CLI
+
+# fast build rule for target.
+UNI-GradeManager-CLI/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/build
+.PHONY : UNI-GradeManager-CLI/fast
+
+src/classes.o: src/classes.cpp.o
+.PHONY : src/classes.o
+
+# target to build an object file
+src/classes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.o
+.PHONY : src/classes.cpp.o
+
+src/classes.i: src/classes.cpp.i
+.PHONY : src/classes.i
+
+# target to preprocess a source file
+src/classes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.i
+.PHONY : src/classes.cpp.i
+
+src/classes.s: src/classes.cpp.s
+.PHONY : src/classes.s
+
+# target to generate assembly for a file
+src/classes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.s
+.PHONY : src/classes.cpp.s
+
+src/courses.o: src/courses.cpp.o
+.PHONY : src/courses.o
+
+# target to build an object file
+src/courses.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.o
+.PHONY : src/courses.cpp.o
+
+src/courses.i: src/courses.cpp.i
+.PHONY : src/courses.i
+
+# target to preprocess a source file
+src/courses.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.i
+.PHONY : src/courses.cpp.i
+
+src/courses.s: src/courses.cpp.s
+.PHONY : src/courses.s
+
+# target to generate assembly for a file
+src/courses.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.s
+.PHONY : src/courses.cpp.s
+
+src/grades.o: src/grades.cpp.o
+.PHONY : src/grades.o
+
+# target to build an object file
+src/grades.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.o
+.PHONY : src/grades.cpp.o
+
+src/grades.i: src/grades.cpp.i
+.PHONY : src/grades.i
+
+# target to preprocess a source file
+src/grades.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.i
+.PHONY : src/grades.cpp.i
+
+src/grades.s: src/grades.cpp.s
+.PHONY : src/grades.s
+
+# target to generate assembly for a file
+src/grades.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.s
+.PHONY : src/grades.cpp.s
+
+src/main_cli.o: src/main_cli.cpp.o
+.PHONY : src/main_cli.o
+
+# target to build an object file
+src/main_cli.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.o
+.PHONY : src/main_cli.cpp.o
+
+src/main_cli.i: src/main_cli.cpp.i
+.PHONY : src/main_cli.i
+
+# target to preprocess a source file
+src/main_cli.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.i
+.PHONY : src/main_cli.cpp.i
+
+src/main_cli.s: src/main_cli.cpp.s
+.PHONY : src/main_cli.s
+
+# target to generate assembly for a file
+src/main_cli.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.s
+.PHONY : src/main_cli.cpp.s
 
 src/main_gui.o: src/main_gui.cpp.o
 .PHONY : src/main_gui.o
 
 # target to build an object file
 src/main_gui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.o
 .PHONY : src/main_gui.cpp.o
 
 src/main_gui.i: src/main_gui.cpp.i
@@ -142,7 +260,7 @@ src/main_gui.i: src/main_gui.cpp.i
 
 # target to preprocess a source file
 src/main_gui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.i
 .PHONY : src/main_gui.cpp.i
 
 src/main_gui.s: src/main_gui.cpp.s
@@ -150,8 +268,62 @@ src/main_gui.s: src/main_gui.cpp.s
 
 # target to generate assembly for a file
 src/main_gui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.s
 .PHONY : src/main_gui.cpp.s
+
+src/students.o: src/students.cpp.o
+.PHONY : src/students.o
+
+# target to build an object file
+src/students.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.o
+.PHONY : src/students.cpp.o
+
+src/students.i: src/students.cpp.i
+.PHONY : src/students.i
+
+# target to preprocess a source file
+src/students.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.i
+.PHONY : src/students.cpp.i
+
+src/students.s: src/students.cpp.s
+.PHONY : src/students.s
+
+# target to generate assembly for a file
+src/students.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.s
+.PHONY : src/students.cpp.s
+
+src/utils.o: src/utils.cpp.o
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
 
 # Help Target
 help:
@@ -161,10 +333,29 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... UNI-GradeManager"
+	@echo "... UNI-GradeManager-CLI"
+	@echo "... UNI-GradeManager-GUI"
+	@echo "... src/classes.o"
+	@echo "... src/classes.i"
+	@echo "... src/classes.s"
+	@echo "... src/courses.o"
+	@echo "... src/courses.i"
+	@echo "... src/courses.s"
+	@echo "... src/grades.o"
+	@echo "... src/grades.i"
+	@echo "... src/grades.s"
+	@echo "... src/main_cli.o"
+	@echo "... src/main_cli.i"
+	@echo "... src/main_cli.s"
 	@echo "... src/main_gui.o"
 	@echo "... src/main_gui.i"
 	@echo "... src/main_gui.s"
+	@echo "... src/students.o"
+	@echo "... src/students.i"
+	@echo "... src/students.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 

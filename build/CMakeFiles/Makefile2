@@ -63,7 +63,8 @@ CMAKE_BINARY_DIR = /workspaces/UNI-GradeManager/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/UNI-GradeManager.dir/all
+all: CMakeFiles/UNI-GradeManager-GUI.dir/all
+all: CMakeFiles/UNI-GradeManager-CLI.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +72,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/UNI-GradeManager.dir/clean
+clean: CMakeFiles/UNI-GradeManager-GUI.dir/clean
+clean: CMakeFiles/UNI-GradeManager-CLI.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/UNI-GradeManager.dir
+# Target rules for target CMakeFiles/UNI-GradeManager-GUI.dir
 
 # All Build rule for target.
-CMakeFiles/UNI-GradeManager.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/UNI-GradeManager/build/CMakeFiles --progress-num=1,2 "Built target UNI-GradeManager"
-.PHONY : CMakeFiles/UNI-GradeManager.dir/all
+CMakeFiles/UNI-GradeManager-GUI.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/UNI-GradeManager/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target UNI-GradeManager-GUI"
+.PHONY : CMakeFiles/UNI-GradeManager-GUI.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/UNI-GradeManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UNI-GradeManager.dir/all
+CMakeFiles/UNI-GradeManager-GUI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UNI-GradeManager-GUI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 0
-.PHONY : CMakeFiles/UNI-GradeManager.dir/rule
+.PHONY : CMakeFiles/UNI-GradeManager-GUI.dir/rule
 
 # Convenience name for target.
-UNI-GradeManager: CMakeFiles/UNI-GradeManager.dir/rule
-.PHONY : UNI-GradeManager
+UNI-GradeManager-GUI: CMakeFiles/UNI-GradeManager-GUI.dir/rule
+.PHONY : UNI-GradeManager-GUI
 
 # clean rule for target.
-CMakeFiles/UNI-GradeManager.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/clean
-.PHONY : CMakeFiles/UNI-GradeManager.dir/clean
+CMakeFiles/UNI-GradeManager-GUI.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-GUI.dir/build.make CMakeFiles/UNI-GradeManager-GUI.dir/clean
+.PHONY : CMakeFiles/UNI-GradeManager-GUI.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/UNI-GradeManager-CLI.dir
+
+# All Build rule for target.
+CMakeFiles/UNI-GradeManager-CLI.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/UNI-GradeManager/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target UNI-GradeManager-CLI"
+.PHONY : CMakeFiles/UNI-GradeManager-CLI.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/UNI-GradeManager-CLI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UNI-GradeManager-CLI.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 0
+.PHONY : CMakeFiles/UNI-GradeManager-CLI.dir/rule
+
+# Convenience name for target.
+UNI-GradeManager-CLI: CMakeFiles/UNI-GradeManager-CLI.dir/rule
+.PHONY : UNI-GradeManager-CLI
+
+# clean rule for target.
+CMakeFiles/UNI-GradeManager-CLI.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UNI-GradeManager-CLI.dir/build.make CMakeFiles/UNI-GradeManager-CLI.dir/clean
+.PHONY : CMakeFiles/UNI-GradeManager-CLI.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

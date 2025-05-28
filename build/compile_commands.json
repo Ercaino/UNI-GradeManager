@@ -1,8 +1,74 @@
 [
 {
   "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o -c /workspaces/UNI-GradeManager/src/main_gui.cpp",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.o -c /workspaces/UNI-GradeManager/src/main_gui.cpp",
   "file": "/workspaces/UNI-GradeManager/src/main_gui.cpp",
-  "output": "CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o"
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.o -c /workspaces/UNI-GradeManager/src/students.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/students.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.o -c /workspaces/UNI-GradeManager/src/grades.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/grades.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.o -c /workspaces/UNI-GradeManager/src/classes.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/classes.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.o -c /workspaces/UNI-GradeManager/src/courses.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/courses.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.o -c /workspaces/UNI-GradeManager/src/utils.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/utils.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.o -c /workspaces/UNI-GradeManager/src/main_cli.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/main_cli.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.o -c /workspaces/UNI-GradeManager/src/students.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/students.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.o -c /workspaces/UNI-GradeManager/src/grades.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/grades.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.o -c /workspaces/UNI-GradeManager/src/classes.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/classes.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.o -c /workspaces/UNI-GradeManager/src/courses.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/courses.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.o"
+},
+{
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.o -c /workspaces/UNI-GradeManager/src/utils.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/utils.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.o"
 }
 ]

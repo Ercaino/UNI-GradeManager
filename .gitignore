@@ -1,1 +1,4 @@
-.github/**
+.cache
+.git
+.vscode
+build

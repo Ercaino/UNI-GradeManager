@@ -39,14 +39,15 @@ Each module consists of:
 
 ## 📁 Project Structure
 
-<!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
-<p align="right">
-  <img src="https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg" /> 
-</p>
-
-<!-- ![Structure](./STRUCTURE.md) -->
-<p align="left">
-  <a href="./STRUCTURE.md">Structure Diagram<a>
+<p float="left">
+  <p align="left">
+    <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
+    <a href="./STRUCTURE.md"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue"></a>
+  </p>
+  <p align="right">
+    <!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
+    <img src="https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg" /> 
+  </p>
 </p>
 
 ## Gallery

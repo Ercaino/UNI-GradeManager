@@ -1,9 +1,12 @@
 .
 ├── assets
 │   ├── documentation
+│   │   ├── CMake-Installation.md
 │   │   ├── Compiler-Installation.md
 │   │   ├── Gallery-Sketches.md
 │   │   ├── Gallery.md
+│   │   ├── Raylib-Raygui-installation.md
+│   │   ├── Run-program.md
 │   │   └── TreeUpdate.md
 │   ├── gallery
 │   │   ├── Gallery-1.jpg
@@ -20,11 +23,12 @@
 │   ├── Logo-edu.svg
 │   └── Poppins-Regular.ttf
 ├── src
-│   └── main.cpp
+│   ├── main_console.cpp
+│   └── main_gui.cpp
 ├── CMakeConfig.h.in
 ├── CMakeLists.txt
 ├── LICENSE.md
 ├── README.md
 └── STRUCTURE.md
 
-5 directories, 23 files
+5 directories, 27 files

@@ -42,10 +42,10 @@ Each module consists of:
 <p float="left">
   <p align="left">
     <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
-    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Compiler-_?style=for-the-badge&color=a72cff"></a>
-    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/CMake-_?style=for-the-badge&color=9714ff"></a>
-    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Raylib/Rayguy-_?style=for-the-badge&color=8700f8"></a>
-    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Run-_?style=for-the-badge&color=7700e9"></a>
+    <a href="./assets/documentation/Compiler-Installation.md"><img src="https://img.shields.io/badge/Compiler-_?style=for-the-badge&color=a72cff"></a>
+    <a href="./assets/documentation/CMake-Installation.md"><img src="https://img.shields.io/badge/CMake-_?style=for-the-badge&color=9714ff"></a>
+    <a href="./assets/documentation/Raylib-Raygui-installation.md"><img src="https://img.shields.io/badge/Raylib/Rayguy-_?style=for-the-badge&color=8700f8"></a>
+    <a href="./assets/documentation/Run-program.md"><img src="https://img.shields.io/badge/Run-_?style=for-the-badge&color=7700e9"></a>
   </p>
 </p>
 

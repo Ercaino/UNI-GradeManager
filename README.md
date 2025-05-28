@@ -37,19 +37,43 @@ Each module consists of:
 - A `.h` file (header) for declaring structs and functions
 - A `.cpp` file (implementation) containing function definitions
 
+## 🎓 Documentation
+
+<p float="left">
+  <p align="left">
+    <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
+    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Compiler-_?style=for-the-badge&color=a72cff"></a>
+    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/CMake-_?style=for-the-badge&color=9714ff"></a>
+    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Raylib/Rayguy-_?style=for-the-badge&color=8700f8"></a>
+    <a href="./assets/documentation/Installation.md"><img src="https://img.shields.io/badge/Run-_?style=for-the-badge&color=7700e9"></a>
+  </p>
+</p>
+
 ## 📁 Project Structure
 
 <p float="left">
   <p align="left">
     <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
-    <a href="./STRUCTURE.md"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue"></a>
-    <a href="./assets/documentation/TreeUpdate.md"><img src="https://img.shields.io/badge/Update.str-_?style=for-the-badge&color=blue"></a>
+    <a href="./STRUCTURE.md"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=bf71ff"></a>
+    <a href="./assets/documentation/TreeUpdate.md"><img src="https://img.shields.io/badge/Update.str-_?style=for-the-badge&color=bf71ff"></a>
   </p>
   <p align="right">
     <!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
     <img src="https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg" /> 
   </p>
 </p>
+
+## ⚙️ Core Features
+
+| Feature | Console | GUI |
+|--------|:-------:|:---:|
+| Add course | ✅ | ✅ |
+| Add class | ✅ | ✅ |
+| Add student | ✅ | ✅ |
+| Enter single grade | ✅ | ✅ |
+| Enter grades for all students | ✅ | ✅ |
+| View students and grades | ✅ | ✅ |
+| Average grades (student/class/course) | ✅ | ✅ |
 
 ## Gallery
 

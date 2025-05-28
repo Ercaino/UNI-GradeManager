@@ -15,9 +15,6 @@ set(SOURCES src/students.cpp src/grades.cpp src/classes.cpp
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-#find library
-find_package(raylib REQUIRED)
-
 # Automatically generate the compile_commands.json file
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # which contains all the information about paths, macros, compiler flags, etc. 
 
@@ -26,9 +23,17 @@ configure_file(CMakeConfig.h.in CMakeConfig.h) # CMakeConfig.h save in ${PROJECT
 
 
 # --- GUI Executable ---
+
+#find library
+find_package(raylib REQUIRED)
+
 add_executable(UNI-GradeManager-GUI src/main_gui.cpp ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+target_link_libraries(UNI-GradeManager-GUI PRIVATE
+    raylib
+    pthread
+    dl
+)
 target_include_directories(UNI-GradeManager-GUI PUBLIC
                            "${PROJECT_SOURCE_DIR}/include"
                            "${PROJECT_BINARY_DIR}")

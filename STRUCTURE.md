@@ -3,6 +3,7 @@
 │   ├── documentation
 │   │   ├── Gallery-Sketches.md
 │   │   ├── Gallery.md
+│   │   ├── Installation.md
 │   │   └── TreeUpdate.md
 │   ├── gallery
 │   │   ├── Gallery-1.jpg
@@ -25,4 +26,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-5 directories, 21 files
+5 directories, 22 files

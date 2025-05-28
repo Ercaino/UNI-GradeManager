@@ -38,13 +38,21 @@ Each module consists of:
 - A `.cpp` file (implementation) containing function definitions
 
 ## 📁 Project Structure
+<!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
+<p align="right">
+  <img src="https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg" /> 
+</p>
 
-![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg)
+<p float="left">
+  <p float="left">
+    <samp>
+      [Structure Diagram](./STRUCTURE.md)
+    </samp>
+  </p>
+</p>
 
-```shell
-$ tree
-$(cat STRUCTURE.md)
-```
+
+
 
 ## Gallery
 

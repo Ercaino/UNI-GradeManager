@@ -1,5 +1,9 @@
 .
 ├── assets
+│   ├── documentation
+│   │   ├── Gallery-Sketches.md
+│   │   ├── Gallery.md
+│   │   └── TreeUpdate.md
 │   ├── gallery
 │   │   ├── Gallery-1.jpg
 │   │   ├── Gallery-10.jpg
@@ -19,7 +23,6 @@
 ├── CMakeLists.txt
 ├── LICENSE.md
 ├── README.md
-├── STRUCTURE.md
-└── TreeUpdate.md
+└── STRUCTURE.md
 
-4 directories, 19 files
+5 directories, 21 files

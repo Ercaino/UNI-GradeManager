@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/OPP-GradeManager
+CMAKE_SOURCE_DIR = /workspaces/UNI-GradeManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/OPP-GradeManager/build
+CMAKE_BINARY_DIR = /workspaces/UNI-GradeManager/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/OPP-GradeManager/build/CMakeFiles /workspaces/OPP-GradeManager/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles /workspaces/UNI-GradeManager/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/OPP-GradeManager/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named OPP-GradeManager
+# Target rules for targets named UNI-GradeManager
 
 # Build rule for target.
-OPP-GradeManager: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 OPP-GradeManager
-.PHONY : OPP-GradeManager
+UNI-GradeManager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 UNI-GradeManager
+.PHONY : UNI-GradeManager
 
 # fast build rule for target.
-OPP-GradeManager/fast:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/build
-.PHONY : OPP-GradeManager/fast
+UNI-GradeManager/fast:
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/build
+.PHONY : UNI-GradeManager/fast
 
 src/main.o: src/main.cpp.o
 
@@ -129,7 +129,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -138,7 +138,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -147,7 +147,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... OPP-GradeManager"
+	@echo "... UNI-GradeManager"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

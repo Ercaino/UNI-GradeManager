@@ -44,16 +44,16 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/OPP-GradeManager
+CMAKE_SOURCE_DIR = /workspaces/UNI-GradeManager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/OPP-GradeManager/build
+CMAKE_BINARY_DIR = /workspaces/UNI-GradeManager/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/OPP-GradeManager.dir/all
+all: CMakeFiles/UNI-GradeManager.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/OPP-GradeManager.dir/clean
+clean: CMakeFiles/UNI-GradeManager.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/OPP-GradeManager.dir
+# Target rules for target CMakeFiles/UNI-GradeManager.dir
 
 # All Build rule for target.
-CMakeFiles/OPP-GradeManager.dir/all:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/depend
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/OPP-GradeManager/build/CMakeFiles --progress-num=1,2 "Built target OPP-GradeManager"
-.PHONY : CMakeFiles/OPP-GradeManager.dir/all
+CMakeFiles/UNI-GradeManager.dir/all:
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/depend
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/UNI-GradeManager/build/CMakeFiles --progress-num=1,2 "Built target UNI-GradeManager"
+.PHONY : CMakeFiles/UNI-GradeManager.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/OPP-GradeManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/OPP-GradeManager/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OPP-GradeManager.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/OPP-GradeManager/build/CMakeFiles 0
-.PHONY : CMakeFiles/OPP-GradeManager.dir/rule
+CMakeFiles/UNI-GradeManager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/UNI-GradeManager.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/UNI-GradeManager/build/CMakeFiles 0
+.PHONY : CMakeFiles/UNI-GradeManager.dir/rule
 
 # Convenience name for target.
-OPP-GradeManager: CMakeFiles/OPP-GradeManager.dir/rule
+UNI-GradeManager: CMakeFiles/UNI-GradeManager.dir/rule
 
-.PHONY : OPP-GradeManager
+.PHONY : UNI-GradeManager
 
 # clean rule for target.
-CMakeFiles/OPP-GradeManager.dir/clean:
-	$(MAKE) -f CMakeFiles/OPP-GradeManager.dir/build.make CMakeFiles/OPP-GradeManager.dir/clean
-.PHONY : CMakeFiles/OPP-GradeManager.dir/clean
+CMakeFiles/UNI-GradeManager.dir/clean:
+	$(MAKE) -f CMakeFiles/UNI-GradeManager.dir/build.make CMakeFiles/UNI-GradeManager.dir/clean
+.PHONY : CMakeFiles/UNI-GradeManager.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

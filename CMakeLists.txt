@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Project name
-project("OPP-GradeManager"
+project("UNI-GradeManager"
         VERSION 1.0
         DESCRIPTION "University management system"
         LANGUAGES CXX)

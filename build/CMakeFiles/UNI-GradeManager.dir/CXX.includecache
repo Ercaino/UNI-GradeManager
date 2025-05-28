@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/workspaces/OPP-GradeManager/src/main.cpp
+/workspaces/UNI-GradeManager/src/main.cpp
 iostream
 -
 CMakeConfig.h
-/workspaces/OPP-GradeManager/src/CMakeConfig.h
+/workspaces/UNI-GradeManager/src/CMakeConfig.h
 
 CMakeConfig.h
 

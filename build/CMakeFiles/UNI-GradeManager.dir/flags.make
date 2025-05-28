@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/OPP-GradeManager/include -I/workspaces/OPP-GradeManager/build 
+CXX_INCLUDES = -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build 
 

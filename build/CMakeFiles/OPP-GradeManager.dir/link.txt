@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/OPP-GradeManager.dir/src/main.cpp.o  -o OPP-GradeManager 

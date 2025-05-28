@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/workspaces/OPP-GradeManager/build",
-  "command": "/usr/bin/c++   -I/workspaces/OPP-GradeManager/include -I/workspaces/OPP-GradeManager/build    -std=gnu++17 -o CMakeFiles/OPP-GradeManager.dir/src/main.cpp.o -c /workspaces/OPP-GradeManager/src/main.cpp",
-  "file": "/workspaces/OPP-GradeManager/src/main.cpp"
+  "directory": "/workspaces/UNI-GradeManager/build",
+  "command": "/usr/bin/c++   -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build    -std=gnu++17 -o CMakeFiles/UNI-GradeManager.dir/src/main.cpp.o -c /workspaces/UNI-GradeManager/src/main.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/main.cpp"
 }
 ]

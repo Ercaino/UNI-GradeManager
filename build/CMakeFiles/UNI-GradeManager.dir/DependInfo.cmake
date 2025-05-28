@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/OPP-GradeManager/src/main.cpp" "/workspaces/OPP-GradeManager/build/CMakeFiles/OPP-GradeManager.dir/src/main.cpp.o"
+  "/workspaces/UNI-GradeManager/src/main.cpp" "/workspaces/UNI-GradeManager/build/CMakeFiles/UNI-GradeManager.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

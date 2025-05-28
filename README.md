@@ -12,7 +12,7 @@ Supports both a text-based interface and a GUI built with raylib + raygui.</p>
     </a>
 </p>
 
-## 📝 Descrizione 
+## 📝 Description
 
 This project implements a university grade management system using a procedural approach in C++.
 <br>
@@ -37,6 +37,14 @@ Each module consists of:
 - A `.h` file (header) for declaring structs and functions
 - A `.cpp` file (implementation) containing function definitions
 
+## 📁 Project Structure
+
+![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg)
+
+```shell
+$ tree
+$(cat STRUCTURE.md)
+```
 
 ## Gallery
 
@@ -84,16 +92,22 @@ Each module consists of:
     <img align="left" width="400" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
     <img align="left" width="400" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
 </details>
-<br>
-    <details close>
-        <summary><a>Sketches</a> (Pop-Up)</summary>
-        <img align="left" width="400" src="./assets/gallery/Gallery-6.jpg" alt="Gallery">
-        <img align="left" width="400" src="./assets/gallery/Gallery-7.jpg" alt="Gallery">
-        <img align="left" width="400" src="./assets/gallery/Gallery-8.jpg" alt="Gallery">
-        <img align="left" width="400" src="./assets/gallery/Gallery-9.jpg" alt="Gallery">
-        <img align="left" width="400" src="./assets/gallery/Gallery-10.jpg" alt="Gallery">
-    </details>
 
+<details close>
+    <summary><a>Sketches</a> (Pop-Up)</summary>
+    <img align="left" width="400" src="./assets/gallery/Gallery-6.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-7.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-8.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-9.jpg" alt="Gallery">
+    <img align="left" width="400" src="./assets/gallery/Gallery-10.jpg" alt="Gallery">
+</details>
+
+---
+
+
+## 🏅 Collaborators
+
+[![Contributors](https://contrib.rocks/image?repo=Ercaino/UNI-GradeManager&reload=1)](https://github.com/Ercaino/UNI-GradeManager/graphs/contributors)
 
 
 

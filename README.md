@@ -43,6 +43,7 @@ Each module consists of:
   <p align="left">
     <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
     <a href="./STRUCTURE.md"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue"></a>
+    <a href="./assets/documentation/TreeUpdate.md"><img src="https://img.shields.io/badge/Update.str-_?style=for-the-badge&color=blue"></a>
   </p>
   <p align="right">
     <!-- ![Structure](https://github.com/Ercaino/UNI-GradeManager/actions/workflows/update_structure.yml/badge.svg) -->
@@ -56,11 +57,14 @@ Each module consists of:
 
 <p float="left">
   <p float="left">
-    <samp><br><br>  
+    <samp><br>  
       Stylized conceptual sketches outline the low-fidelity GUI architecture. 
       <br>
       These representations constitute the initial iteration of the software design.
-      <br><br><br>  
+      <br><br>
+      <a href="./assets/documentation/Gallery-Sketches.md"><img src="https://img.shields.io/badge/Sketches-_?style=for-the-badge&color=purple"></a>  
+       <a href="./assets/documentation/Gallery.md"><img src="https://img.shields.io/badge/Screenshot-_?style=for-the-badge&color=purple"></a> 
+      <br><br>
       Initiating a project with low-fidelity prototypes represents an established best practice in software development and interface design.
     </samp>
   </p>
@@ -78,7 +82,6 @@ Each module consists of:
   </p>
 </p><br>
 
-
 ```Json
 {
 	"program": "Note",
@@ -89,29 +92,13 @@ Each module consists of:
 }
 ```
 
-<details close>
-    <summary><a>Sketches</a> (Stylized Conceptual)</summary>
-    <img align="left" width="400" src="./assets/gallery/Gallery-2.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-3.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-4.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-5.jpg" alt="Gallery">
-</details>
 
-<details close>
-    <summary><a>Sketches</a> (Pop-Up)</summary>
-    <img align="left" width="400" src="./assets/gallery/Gallery-6.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-7.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-8.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-9.jpg" alt="Gallery">
-    <img align="left" width="400" src="./assets/gallery/Gallery-10.jpg" alt="Gallery">
-</details>
-
----
 
 
 ## 🏅 Collaborators
 
 [![Contributors](https://contrib.rocks/image?repo=Ercaino/UNI-GradeManager&reload=1)](https://github.com/Ercaino/UNI-GradeManager/graphs/contributors)
 
+## 📊 GitHub Stats
 
 

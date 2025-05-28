@@ -23,7 +23,7 @@
 │   ├── Logo-edu.svg
 │   └── Poppins-Regular.ttf
 ├── src
-│   ├── main_console.cpp
+│   ├── main_cli.cpp
 │   └── main_gui.cpp
 ├── CMakeConfig.h.in
 ├── CMakeLists.txt

@@ -22,13 +22,24 @@
 │   ├── Logo-edu.png
 │   ├── Logo-edu.svg
 │   └── Poppins-Regular.ttf
+├── include
+│   ├── classes.h
+│   ├── courses.h
+│   ├── grades.h
+│   ├── students.h
+│   └── utils.h
 ├── src
+│   ├── classes.cpp
+│   ├── courses.cpp
+│   ├── grades.cpp
 │   ├── main_cli.cpp
-│   └── main_gui.cpp
+│   ├── main_gui.cpp
+│   ├── students.cpp
+│   └── utils.cpp
 ├── CMakeConfig.h.in
 ├── CMakeLists.txt
 ├── LICENSE.md
 ├── README.md
 └── STRUCTURE.md
 
-5 directories, 27 files
+6 directories, 37 files

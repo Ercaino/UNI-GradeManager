@@ -17,7 +17,8 @@
 │   │   ├── Gallery-8.jpg
 │   │   └── Gallery-9.jpg
 │   ├── Logo-edu.png
-│   └── Logo-edu.svg
+│   ├── Logo-edu.svg
+│   └── Poppins-Regular.ttf
 ├── src
 │   └── main.cpp
 ├── CMakeConfig.h.in
@@ -26,4 +27,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-5 directories, 22 files
+5 directories, 23 files

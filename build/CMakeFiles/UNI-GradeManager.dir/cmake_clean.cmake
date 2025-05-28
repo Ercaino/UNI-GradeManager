@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/UNI-GradeManager.dir/src/main.cpp.o"
+  "CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o"
+  "CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o.d"
   "UNI-GradeManager"
   "UNI-GradeManager.pdb"
 )

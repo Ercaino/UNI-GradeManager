@@ -1,7 +1,8 @@
 [
 {
   "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++   -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build    -std=gnu++17 -o CMakeFiles/UNI-GradeManager.dir/src/main.cpp.o -c /workspaces/UNI-GradeManager/src/main.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/main.cpp"
+  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o -c /workspaces/UNI-GradeManager/src/main_gui.cpp",
+  "file": "/workspaces/UNI-GradeManager/src/main_gui.cpp",
+  "output": "CMakeFiles/UNI-GradeManager.dir/src/main_gui.cpp.o"
 }
 ]

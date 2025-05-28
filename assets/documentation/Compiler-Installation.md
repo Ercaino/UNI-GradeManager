@@ -9,7 +9,7 @@ To install GCC (GNU Compiler Collection) on a Linux machine, the process varies 
     sudo apt install build-essential
 ```
 
-> The build-essential package includes GCC, G++, make, and other tools needed to build software.
+> ⚠️ Note: The build-essential package includes GCC, G++, make, and other tools needed to build software.
 
 ### 2. <img src="https://skillicons.dev/icons?i=linux" width="20" alt="Gallery" /> Fedora / CentOS Stream
 
@@ -115,7 +115,7 @@ Open Command Prompt `cmd` and type:
     xcode-select --install
 ```
 
-> This will install Clang, LLVM, make, and other useful development tools.
+> ⚠️ Note: This will install Clang, LLVM, make, and other useful development tools.
 
 ### 5. <img src="https://skillicons.dev/icons?i=apple" width="20" alt="Gallery" /> MacOS (Homebrew)
 ```bash

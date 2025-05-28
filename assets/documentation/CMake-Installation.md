@@ -101,3 +101,23 @@ int main(){
     return 0;
 }
 ```
+
+### Install Cmake by tar
+
+```sh
+#!/bin/bash
+
+# Scarica e installa una versione recente di CMake
+wget https://github.com/Kitware/CMake/releases/download/v3.29.4/cmake-3.29.4-linux-x86_64.tar.gz 
+tar -xzvf cmake-3.29.4-linux-x86_64.tar.gz
+mv cmake-3.29.4-linux-x86_64 cmake-3.29.4
+mkdir -p ~/local
+mv cmake-3.29.4 ~/local/
+
+# Aggiunge cmake al PATH
+echo 'export PATH=~/local/cmake-3.29.4/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+echo "✅ CMake installato!"
+cmake --version
+```

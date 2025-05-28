@@ -4,7 +4,7 @@
 
 #### Locally (with Git)
 ```bash
-#  Nella root del progetto:
+#  In the project root:
 mkdir -p .github/workflows
 touch .github/workflows/update_structure.yml
 ```
@@ -15,9 +15,9 @@ name: Update Project Structure
 on:
   push:
     branches: [ "master" ]
-  workflow_dispatch:  # Permite l'esecuzione manuale
+  workflow_dispatch:  # Allows manual execution
   schedule:
-    - cron: '0 0 * * *'  # Esecuzione giornaliera
+    - cron: '0 0 * * *'  # Daily execution
 
 jobs:
   update-structure:
@@ -53,7 +53,7 @@ Edit the .github/workflows/update_structure.yml file directly by adding:
 
 ```yaml
 permissions:
-  contents: write  # Permette il commit
+  contents: write  # Allows commit
 ```
 
 ---

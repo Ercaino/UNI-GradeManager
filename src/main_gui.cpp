@@ -1,5 +1,6 @@
 #include <raylib.h>
-#include "../include/raygui.h"
+#define RAYGUI_IMPLEMENTATION
+#include "raygui.h"
 
 // Include per printf
 #include <cstdio>

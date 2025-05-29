@@ -26,6 +26,7 @@
 │   ├── classes.h
 │   ├── courses.h
 │   ├── grades.h
+│   ├── raygui.h
 │   ├── students.h
 │   └── utils.h
 ├── src
@@ -42,4 +43,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-6 directories, 37 files
+6 directories, 38 files

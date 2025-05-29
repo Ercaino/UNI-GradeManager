@@ -4,6 +4,7 @@
 #include "../include/students.h"
 
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -56,6 +57,7 @@ int main(int argc, char *argv[]) {
       printGradesMenu();
       cout << "Your choice: ";
       cin >> choice;
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
       switch (choice) {
       case 1:
         addGradesToClass();
@@ -71,6 +73,7 @@ int main(int argc, char *argv[]) {
       printInformationMenu();
       cout << "Your choice: ";
       cin >> choice;
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
       switch (choice) {
       case 1:
         listStudentsAndGradesInAClass();
@@ -94,6 +97,7 @@ int main(int argc, char *argv[]) {
     printMainMenu();
     cout << "Your choice: ";
     cin >> choice;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
   }
 
   return 0;

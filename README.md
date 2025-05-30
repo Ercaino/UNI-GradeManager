@@ -15,6 +15,7 @@ Supports both a text-based interface and a GUI built with raylib + raygui.</p>
 ## 📝 Description
 
 This project implements a university grade management system using a procedural approach in C++.
+(SOURCES GIT)[https://github.com/Ercaino/UNI-GradeManager]
 <br>
 It allows you to:
 

@@ -10,7 +10,6 @@
 │   │   └── TreeUpdate.md
 │   ├── gallery
 │   │   ├── Gallery-1.jpg
-│   │   ├── Gallery-10.jpg
 │   │   ├── Gallery-2.jpg
 │   │   ├── Gallery-3.jpg
 │   │   ├── Gallery-4.jpg
@@ -74,4 +73,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-11 directories, 64 files
+11 directories, 63 files

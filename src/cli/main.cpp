@@ -1,7 +1,7 @@
-#include "../include/classes.h"
-#include "../include/courses.h"
-#include "../include/grades.h"
-#include "../include/students.h"
+#include "../../include/cli/classes.h"
+#include "../../include/cli/courses.h"
+#include "../../include/cli/grades.h"
+#include "../../include/cli/students.h"
 
 #include <iostream>
 #include <limits>

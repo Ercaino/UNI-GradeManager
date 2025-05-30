@@ -1,6 +1,6 @@
-#include "../include/courses.h"
-#include "../include/classes.h"
-#include "../include/utils.h"
+#include "../../include/gui/courses.h"
+#include "../../include/gui/classes.h"
+#include "../../include/gui/utils.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -36,7 +36,6 @@ bool isValidCourseName(const string &courseName) {
 }
 
 string inputCourseName() {
-  cout << "Insert a name for the course: ";
 
   string courseName;
   getline(cin, courseName);

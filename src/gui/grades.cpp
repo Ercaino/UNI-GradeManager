@@ -1,8 +1,8 @@
-#include "../include/grades.h"
-#include "../include/classes.h"
-#include "../include/courses.h"
-#include "../include/students.h"
-#include "../include/utils.h"
+#include "../../include/gui/grades.h"
+#include "../../include/gui/classes.h"
+#include "../../include/gui/courses.h"
+#include "../../include/gui/students.h"
+#include "../../include/gui/utils.h"
 #include <fstream>
 #include <iostream>
 #include <string>

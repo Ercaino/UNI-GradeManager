@@ -1,4 +1,4 @@
-/workspaces/UNI-GradeManager/build/CMakeFiles/UNI-GradeManager-GUI.dir
-/workspaces/UNI-GradeManager/build/CMakeFiles/UNI-GradeManager-CLI.dir
-/workspaces/UNI-GradeManager/build/CMakeFiles/edit_cache.dir
-/workspaces/UNI-GradeManager/build/CMakeFiles/rebuild_cache.dir
+/home/xitonight/Projects/UNI-GradeManager/build/CMakeFiles/UNI-GradeManager-GUI.dir
+/home/xitonight/Projects/UNI-GradeManager/build/CMakeFiles/UNI-GradeManager-CLI.dir
+/home/xitonight/Projects/UNI-GradeManager/build/CMakeFiles/edit_cache.dir
+/home/xitonight/Projects/UNI-GradeManager/build/CMakeFiles/rebuild_cache.dir

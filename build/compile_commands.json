@@ -1,74 +1,92 @@
 [
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.o -c /workspaces/UNI-GradeManager/src/main_gui.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/main_gui.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/main_gui.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/main.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/main.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/main.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/main.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.o -c /workspaces/UNI-GradeManager/src/students.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/students.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/students.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/globals.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/globals.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/globals.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/globals.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.o -c /workspaces/UNI-GradeManager/src/grades.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/grades.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/grades.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/sidebar.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/sidebar.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/sidebar.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/sidebar.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.o -c /workspaces/UNI-GradeManager/src/classes.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/classes.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/classes.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/students.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/students.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/students.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/students.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.o -c /workspaces/UNI-GradeManager/src/courses.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/courses.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/courses.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/loginscreen.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/loginscreen.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/loginscreen.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/loginscreen.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -I/usr/local/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.o -c /workspaces/UNI-GradeManager/src/utils.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/utils.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/utils.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/grades.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/grades.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/grades.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/grades.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.o -c /workspaces/UNI-GradeManager/src/main_cli.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/main_cli.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/main_cli.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/classes.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/classes.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/classes.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/classes.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.o -c /workspaces/UNI-GradeManager/src/students.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/students.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/students.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/courses.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/courses.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/courses.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/courses.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.o -c /workspaces/UNI-GradeManager/src/grades.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/grades.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/grades.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/gui -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -I/usr/include -o CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/utils.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/gui/utils.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/gui/utils.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-GUI.dir/src/gui/utils.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.o -c /workspaces/UNI-GradeManager/src/classes.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/classes.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/classes.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/main.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/main.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/main.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/main.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.o -c /workspaces/UNI-GradeManager/src/courses.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/courses.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/courses.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/students.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/students.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/students.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/students.cpp.o"
 },
 {
-  "directory": "/workspaces/UNI-GradeManager/build",
-  "command": "/usr/bin/c++  -I/workspaces/UNI-GradeManager/include -I/workspaces/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.o -c /workspaces/UNI-GradeManager/src/utils.cpp",
-  "file": "/workspaces/UNI-GradeManager/src/utils.cpp",
-  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/utils.cpp.o"
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/grades.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/grades.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/grades.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/grades.cpp.o"
+},
+{
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/classes.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/classes.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/classes.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/classes.cpp.o"
+},
+{
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/courses.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/courses.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/courses.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/courses.cpp.o"
+},
+{
+  "directory": "/home/xitonight/Projects/UNI-GradeManager/build",
+  "command": "/bin/c++  -I/home/xitonight/Projects/UNI-GradeManager/include/cli -I/home/xitonight/Projects/UNI-GradeManager/build -std=gnu++17 -o CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/utils.cpp.o -c /home/xitonight/Projects/UNI-GradeManager/src/cli/utils.cpp",
+  "file": "/home/xitonight/Projects/UNI-GradeManager/src/cli/utils.cpp",
+  "output": "CMakeFiles/UNI-GradeManager-CLI.dir/src/cli/utils.cpp.o"
 }
 ]

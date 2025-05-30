@@ -1,7 +1,7 @@
-#include "../include/classes.h"
-#include "../include/courses.h"
-#include "../include/students.h"
-#include "../include/utils.h"
+#include "../../include/cli/classes.h"
+#include "../../include/cli/courses.h"
+#include "../../include/cli/students.h"
+#include "../../include/cli/utils.h"
 
 #include <fstream>
 #include <iostream>
@@ -141,7 +141,6 @@ bool classHasStudents(const int &classId) {
 }
 
 int chooseClass(const int &mode) {
-  int choice;
   listClasses();
   switch (mode) {
   case 1:
@@ -158,10 +157,13 @@ int chooseClass(const int &mode) {
             "grade: ";
     break;
   }
+  int choice;
   cin >> choice;
 
   while (choice < 1 || choice > getLastId(classesDataPath)) {
     cout << "Please enter a valid class Id: ";
+    cin.clear();
+    cin.ignore();
     cin >> choice;
   }
 

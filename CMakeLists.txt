@@ -8,8 +8,11 @@ project("UNI-GradeManager"
         LANGUAGES CXX)
 
 # Set src/main.cpp in SOURCES
-set(SOURCES src/students.cpp src/grades.cpp src/classes.cpp
-            src/courses.cpp src/utils.cpp)
+set(GUI_SOURCES src/gui/globals.cpp src/gui/sidebar.cpp src/gui/students.cpp src/gui/loginscreen.cpp src/gui/grades.cpp src/gui/classes.cpp
+            src/gui/courses.cpp src/gui/utils.cpp)
+
+set(CLI_SOURCES src/cli/students.cpp src/cli/grades.cpp src/cli/classes.cpp
+            src/cli/courses.cpp src/cli/utils.cpp)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -27,31 +30,27 @@ configure_file(CMakeConfig.h.in CMakeConfig.h) # CMakeConfig.h save in ${PROJECT
 #find library
 find_package(raylib REQUIRED)
 
-add_executable(UNI-GradeManager-GUI src/main_gui.cpp ${SOURCES})
+add_executable(
+  UNI-GradeManager-GUI 
+  src/gui/main.cpp 
+  ${GUI_SOURCES}
+)
 
 target_link_libraries(UNI-GradeManager-GUI PRIVATE
     raylib
     pthread
     dl
 )
+
 target_include_directories(UNI-GradeManager-GUI PUBLIC
-                           "${PROJECT_SOURCE_DIR}/include"
+                           "${PROJECT_SOURCE_DIR}/include/gui"
                            "${PROJECT_BINARY_DIR}")
 
 # --- CLI Executable ---
-add_executable(UNI-GradeManager-CLI src/main_cli.cpp ${SOURCES})
+add_executable(UNI-GradeManager-CLI src/cli/main.cpp ${CLI_SOURCES})
 
 target_include_directories(UNI-GradeManager-CLI PUBLIC
-                           "${PROJECT_SOURCE_DIR}/include"
+                           "${PROJECT_SOURCE_DIR}/include/cli"
                            "${PROJECT_BINARY_DIR}")
 
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
-
-# Tell CMake to compile main.cpp as an executable
-# add_executable(${PROJECT_NAME} ${SOURCES})
-
-# Add this binary include file search path
-# target_include_directories(${PROJECT_NAME} PUBLIC
-#                           "${PROJECT_SOURCE_DIR}/include" # For include file
-#                           "${PROJECT_BINARY_DIR}" # For CMakeConfig.h
-#                           )

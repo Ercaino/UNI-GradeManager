@@ -9,7 +9,7 @@ bool courseExists(const string &);
 void addNewCourse();
 bool isValidCourseName(const string &);
 int writeNewCourse(const string &);
-void listCourses();
+string listCourses();
 int chooseCourse();
 bool courseHasClasses(const int &courseId);
 string getCourseNameFromId(const int &courseId);

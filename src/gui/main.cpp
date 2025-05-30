@@ -24,7 +24,8 @@ bool isPopupOpen = false;
 bool canSave = true;
 AppState currentState = APP_STATE_LOGIN;
 
-void mainArea(const char *section) {
+void mainArea(const char *section)
+{
   DrawRectangle((float)(screenWidth / 3), 0, (float)(1100), screenHeight,
                 GetColor(backgroundColor));
 
@@ -34,9 +35,11 @@ void mainArea(const char *section) {
   DrawText(section, (float)(screenWidth / 3 + 100), 55, 20, WHITE);
 }
 
-void addNewButton() {
+void addNewButton()
+{
   if (GuiButton((Rectangle){screenWidth - 90, screenHeight - 90, 35, 35},
-                " ")) {
+                " "))
+  {
     isPopupOpen = true; // Apri il popup quando il pulsante viene cliccato
   }
 
@@ -48,12 +51,14 @@ void addNewButton() {
       0, 1, WHITE);
 }
 
-void DrawCustomText(const string &text, Vector2 position, float fontSize = 20) {
+void DrawCustomText(const string &text, Vector2 position, float fontSize = 20)
+{
   DrawTextEx(customfont, text.c_str(), position, fontSize, 1,
              GetColor(textColor));
 };
 
-int main() {
+int main()
+{
   InitWindow(screenWidth, screenHeight, "UNI - Manage System");
   SetTargetFPS(60);
 
@@ -66,16 +71,26 @@ int main() {
   GuiSetStyle(BUTTON, BORDER_COLOR_NORMAL, buttonBorderColor);
 
   char userInput[256] = "";
+  char userInputCourse[256] = "";
+  char userInputClass[256] = "";
+  bool focusOnId = false;
 
-  while (!quit && !WindowShouldClose()) {
+  int activeOption = 0;        // Index of the currently selected option
+  bool dropdownActive = false; // Is the dropdown expanded?
+
+  while (!quit && !WindowShouldClose())
+  {
 
     BeginDrawing();
     ClearBackground(GetColor(backgroundColor));
 
-    if (currentState == APP_STATE_LOGIN) {
+    if (currentState == APP_STATE_LOGIN)
+    {
       // Schermata di login
       loginScreen(currentState, quit);
-    } else if (currentState == APP_STATE_COURSES) {
+    }
+    else if (currentState == APP_STATE_COURSES)
+    {
       // Barra laterale sinistra
       sidebar(currentState, quit);
 
@@ -89,7 +104,8 @@ int main() {
       int i = 0;
       ifstream coursesFile(coursesDataPath);
       string line;
-      while (getline(coursesFile, line)) {
+      while (getline(coursesFile, line))
+      {
         vector<string> splitLine = splitString(line, ',');
         i++;
         DrawRectangle((float)(screenWidth / 3 + 75), 90 + i * 60,
@@ -120,7 +136,8 @@ int main() {
       }
 
       // Disegna il popup se è aperto
-      if (isPopupOpen) {
+      if (isPopupOpen)
+      {
         // Dimensioni e posizione del popup
         int popupWidth = 600;
         int popupHeight = 400;
@@ -149,11 +166,13 @@ int main() {
 
         // Pulsante "Chiudi" nel popup
         if (GuiButton((Rectangle){popupX + 350, popupY + 340, 100, 40},
-                      "ESC")) {
+                      "ESC"))
+        {
           isPopupOpen = false; // Chiudi il popup
         }
 
-        if (courseExists(userInput) || !isValidCourseName(userInput)) {
+        if (courseExists(userInput) || !isValidCourseName(userInput))
+        {
           if (courseExists(userInput))
             DrawText("Course already exists", popupX + 30, popupY + 200, 20,
                      RED);
@@ -163,18 +182,23 @@ int main() {
                      RED);
 
           canSave = false;
-        } else
+        }
+        else
           canSave = true;
 
         // Pulsante "Salva" nel popup
         if (GuiButton((Rectangle){popupX + 475, popupY + 340, 100, 40},
-                      "Salva")) {
-          if (canSave) {
+                      "Salva"))
+        {
+          if (canSave)
+          {
             writeNewCourse(userInput);
           }
         }
       }
-    } else if (currentState == APP_STATE_CLASSES) {
+    }
+    else if (currentState == APP_STATE_CLASSES)
+    {
       // Schermata principale
       // Barra laterale sinistra
       sidebar(currentState, quit);
@@ -189,7 +213,8 @@ int main() {
       int i = 0;
       ifstream classesFile(classesDataPath);
       string line;
-      while (getline(classesFile, line)) {
+      while (getline(classesFile, line))
+      {
         vector<string> splitLine = splitString(line, ',');
         i++;
         DrawRectangle((float)(screenWidth / 3 + 75), 90 + i * 60,
@@ -225,7 +250,99 @@ int main() {
                                 (float)(100 + i * 60)},
                       0, 1, WHITE);
       }
-    } else if (currentState == APP_STATE_STUDENT) {
+      // Disegna il popup se è aperto
+      if (isPopupOpen)
+      {
+        // Dimensioni e posizione del popup
+        int popupWidth = 600;
+        int popupHeight = 400;
+        int popupX = screenWidth / 2 - popupWidth / 2;
+        int popupY = screenHeight / 2 - popupHeight / 2;
+
+        // Dim schermo
+        DrawRectangle(0, 0, screenWidth, screenHeight, GetColor(coverColor));
+
+        // Disegna il rettangolo del popup
+        DrawRectangle(popupX, popupY, popupWidth, popupHeight,
+                      GetColor(popUpBack));
+        DrawRectangleLines(popupX, popupY, popupWidth, popupHeight, BLACK);
+
+        // Disegna barra
+        DrawRectangle(popupX, popupY, popupWidth, popupHeight / 4 - 10,
+                      GetColor(popUpBar));
+        DrawText("ADD Classes", popupX + 30, popupY + 35, 20,
+                 GetColor(textColor));
+
+        // Testo nel popup
+        DrawText("Classes Name", popupX + 30, popupY + 140, 20,
+                 GetColor(textColor));
+        GuiTextBox({(float)popupX + 200, (float)popupY + 130, 300, 40},
+                   userInputClass, 255, !focusOnId);
+        DrawText("Nel Corso", popupX + 30, popupY + 200, 20,
+                 GetColor(textColor));
+        string optionsString = listCourses();
+        const char *options = optionsString.c_str();
+        printf(options);
+        if (GuiDropdownBox({(float)popupX + 200, (float)popupY + 210, 300, 40},
+                           options, &activeOption, dropdownActive))
+        {
+          dropdownActive = !dropdownActive;
+        }
+
+        // GuiTextBox({(float)popupX + 200, (float)popupY + 210, 300, 40},
+        //            userInputCourse, 255, focusOnId);
+
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+          if (CheckCollisionPointRec(
+                  GetMousePosition(),
+                  {(float)popupX + 200, (float)popupY + 130, 300, 40}))
+          {
+            focusOnId = false; // Focus on "Name" text box
+          }
+          else if (CheckCollisionPointRec(
+                       GetMousePosition(),
+                       {(float)popupX + 200, (float)popupY + 210, 300, 40}))
+          {
+            focusOnId = true; // Focus on "ID" text box
+          }
+        }
+
+        // Pulsante "Chiudi" nel popup
+        if (GuiButton((Rectangle){popupX + 350, popupY + 340, 100, 40},
+                      "ESC"))
+        {
+          isPopupOpen = false; // Chiudi il popup
+        }
+
+        if (courseExists(userInput) || !isValidCourseName(userInput))
+        {
+          if (courseExists(userInput))
+            DrawText("Course already exists", popupX + 30, popupY + 275, 20,
+                     RED);
+
+          if (!isValidCourseName(userInput))
+            DrawText("Invalid name. (3-50 char)", popupX + 30, popupY + 275, 20,
+                     RED);
+
+          canSave = false;
+        }
+        else
+          canSave = true;
+
+        // Pulsante "Salva" nel popup
+        if (GuiButton((Rectangle){popupX + 475, popupY + 340, 100, 40},
+                      "Salva"))
+        {
+          if (canSave)
+          {
+            writeNewCourse(userInput);
+          }
+        }
+      }
+    }
+    else if (currentState == APP_STATE_STUDENT)
+    {
       // Schermata principale
       // Barra laterale sinistra
       sidebar(currentState, quit);
@@ -240,7 +357,8 @@ int main() {
       int i = 0;
       ifstream studentsFile(studentsDataPath);
       string line;
-      while (getline(studentsFile, line)) {
+      while (getline(studentsFile, line))
+      {
         vector<string> splitLine = splitString(line, ',');
         i++;
         DrawRectangle((float)(screenWidth / 3 + 75), 90 + i * 60,

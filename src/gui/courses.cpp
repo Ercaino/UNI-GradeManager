@@ -80,16 +80,17 @@ void addNewCourse() {
   cout << "Course added successfully." << endl;
 }
 
-void listCourses() {
+string listCourses() {
   ifstream coursesFile(coursesDataPath);
   string line;
+  string list = "";
 
-  cout << endl << "============ Courses ============" << endl;
-  // Loop attraverso ogni riga del file dei corsi
   while (getline(coursesFile, line)) {
     vector<string> splitLine = splitString(line, ',');
-    cout << splitLine[0] + ". " + splitLine[1] << endl;
+    list += splitLine[1] += ";";
   }
+
+  return list;
 }
 
 // Funzione per ottenere il nome del corso dato l'ID

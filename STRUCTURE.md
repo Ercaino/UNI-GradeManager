@@ -21,26 +21,57 @@
 │   │   └── Gallery-9.jpg
 │   ├── Logo-edu.png
 │   ├── Logo-edu.svg
-│   └── Poppins-Regular.ttf
+│   ├── Poppins-Regular.ttf
+│   ├── add.png
+│   ├── check.png
+│   ├── delete.png
+│   ├── more.png
+│   ├── note.png
+│   └── percent.png
+├── data
+│   ├── classes.txt
+│   ├── courses.txt
+│   └── students.txt
 ├── include
-│   ├── classes.h
-│   ├── courses.h
-│   ├── grades.h
-│   ├── raygui.h
-│   ├── students.h
-│   └── utils.h
+│   ├── cli
+│   │   ├── classes.h
+│   │   ├── courses.h
+│   │   ├── grades.h
+│   │   ├── students.h
+│   │   └── utils.h
+│   └── gui
+│       ├── classes.h
+│       ├── colors.h
+│       ├── courses.h
+│       ├── globals.h
+│       ├── grades.h
+│       ├── loginscreen.h
+│       ├── raygui.h
+│       ├── sidebar.h
+│       ├── students.h
+│       └── utils.h
 ├── src
-│   ├── classes.cpp
-│   ├── courses.cpp
-│   ├── grades.cpp
-│   ├── main_cli.cpp
-│   ├── main_gui.cpp
-│   ├── students.cpp
-│   └── utils.cpp
+│   ├── cli
+│   │   ├── classes.cpp
+│   │   ├── courses.cpp
+│   │   ├── grades.cpp
+│   │   ├── main.cpp
+│   │   ├── students.cpp
+│   │   └── utils.cpp
+│   └── gui
+│       ├── classes.cpp
+│       ├── courses.cpp
+│       ├── globals.cpp
+│       ├── grades.cpp
+│       ├── loginscreen.cpp
+│       ├── main.cpp
+│       ├── sidebar.cpp
+│       ├── students.cpp
+│       └── utils.cpp
 ├── CMakeConfig.h.in
 ├── CMakeLists.txt
 ├── LICENSE.md
 ├── README.md
 └── STRUCTURE.md
 
-6 directories, 38 files
+11 directories, 64 files

@@ -45,6 +45,7 @@
 │       ├── globals.h
 │       ├── grades.h
 │       ├── loginscreen.h
+│       ├── popup.h
 │       ├── raygui.h
 │       ├── sidebar.h
 │       ├── students.h
@@ -64,6 +65,7 @@
 │       ├── grades.cpp
 │       ├── loginscreen.cpp
 │       ├── main.cpp
+│       ├── popup.cpp
 │       ├── sidebar.cpp
 │       ├── students.cpp
 │       └── utils.cpp
@@ -73,4 +75,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-11 directories, 63 files
+11 directories, 65 files

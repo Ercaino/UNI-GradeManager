@@ -1,0 +1,81 @@
+.
+├── assets
+│   ├── documentation
+│   │   ├── CMake-Installation.md
+│   │   ├── Compiler-Installation.md
+│   │   ├── Gallery-Sketches.md
+│   │   ├── Gallery.md
+│   │   ├── Raylib-Raygui-installation.md
+│   │   ├── Run-program.md
+│   │   └── TreeUpdate.md
+│   ├── gallery
+│   │   ├── Gallery-1.jpg
+│   │   ├── Gallery-2.jpg
+│   │   ├── Gallery-3.jpg
+│   │   ├── Gallery-4.jpg
+│   │   ├── Gallery-5.jpg
+│   │   ├── Gallery-6.jpg
+│   │   ├── Gallery-7.jpg
+│   │   ├── Gallery-8.jpg
+│   │   └── Gallery-9.jpg
+│   ├── Logo-edu.png
+│   ├── Logo-edu.svg
+│   ├── MaterialIcons-Regular.ttf
+│   ├── Poppins-Black.ttf
+│   ├── Poppins-Bold.ttf
+│   ├── Poppins-Regular.ttf
+│   ├── add.png
+│   ├── check.png
+│   ├── delete.png
+│   ├── dropdown-arrow-right.png
+│   ├── dropdown-arrow.png
+│   ├── more.png
+│   ├── note.png
+│   └── percent.png
+├── include
+│   ├── cli
+│   │   ├── classes.h
+│   │   ├── courses.h
+│   │   ├── grades.h
+│   │   ├── students.h
+│   │   └── utils.h
+│   └── gui
+│       ├── classes.h
+│       ├── colors.h
+│       ├── courses.h
+│       ├── globals.h
+│       ├── grades.h
+│       ├── loginscreen.h
+│       ├── popups.h
+│       ├── raygui.h
+│       ├── sidebar.h
+│       ├── students.h
+│       └── utils.h
+├── src
+│   ├── cli
+│   │   ├── classes.cpp
+│   │   ├── courses.cpp
+│   │   ├── grades.cpp
+│   │   ├── main.cpp
+│   │   ├── students.cpp
+│   │   └── utils.cpp
+│   └── gui
+│       ├── classes.cpp
+│       ├── courses.cpp
+│       ├── globals.cpp
+│       ├── grades.cpp
+│       ├── loginscreen.cpp
+│       ├── main.cpp
+│       ├── mainarea.cpp
+│       ├── popups.cpp
+│       ├── sidebar.cpp
+│       ├── students.cpp
+│       └── utils.cpp
+├── CMakeConfig.h.in
+├── CMakeLists.txt
+├── LICENSE.md
+├── README.md
+├── STRUCTURE.md
+└── STRUCTURE.txt
+
+10 directories, 69 files

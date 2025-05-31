@@ -75,7 +75,6 @@
 ├── CMakeLists.txt
 ├── LICENSE.md
 ├── README.md
-├── STRUCTURE.md
 └── STRUCTURE.txt
 
-10 directories, 69 files
+10 directories, 68 files

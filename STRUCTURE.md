@@ -32,11 +32,6 @@
 │   ├── more.png
 │   ├── note.png
 │   └── percent.png
-├── data
-│   ├── classes.txt
-│   ├── courses.txt
-│   ├── grades.txt
-│   └── students.txt
 ├── include
 │   ├── cli
 │   │   ├── classes.h
@@ -82,4 +77,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-11 directories, 72 files
+10 directories, 68 files

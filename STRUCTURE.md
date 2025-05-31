@@ -20,16 +20,22 @@
 │   │   └── Gallery-9.jpg
 │   ├── Logo-edu.png
 │   ├── Logo-edu.svg
+│   ├── MaterialIcons-Regular.ttf
+│   ├── Poppins-Black.ttf
+│   ├── Poppins-Bold.ttf
 │   ├── Poppins-Regular.ttf
 │   ├── add.png
 │   ├── check.png
 │   ├── delete.png
+│   ├── dropdown-arrow-right.png
+│   ├── dropdown-arrow.png
 │   ├── more.png
 │   ├── note.png
 │   └── percent.png
 ├── data
 │   ├── classes.txt
 │   ├── courses.txt
+│   ├── grades.txt
 │   └── students.txt
 ├── include
 │   ├── cli
@@ -46,6 +52,7 @@
 │       ├── grades.h
 │       ├── loginscreen.h
 │       ├── popup.h
+│       ├── popups.h
 │       ├── raygui.h
 │       ├── sidebar.h
 │       ├── students.h
@@ -65,7 +72,9 @@
 │       ├── grades.cpp
 │       ├── loginscreen.cpp
 │       ├── main.cpp
+│       ├── mainarea.cpp
 │       ├── popup.cpp
+│       ├── popups.cpp
 │       ├── sidebar.cpp
 │       ├── students.cpp
 │       └── utils.cpp
@@ -75,4 +84,4 @@
 ├── README.md
 └── STRUCTURE.md
 
-11 directories, 65 files
+11 directories, 74 files

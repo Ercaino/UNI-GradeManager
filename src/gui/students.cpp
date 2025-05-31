@@ -1,11 +1,15 @@
 #include "../../include/gui/students.h"
 #include "../../include/gui/classes.h"
+#include "../../include/gui/colors.h"
 #include "../../include/gui/courses.h"
+#include "../../include/gui/globals.h"
 #include "../../include/gui/grades.h"
+#include "../../include/gui/raygui.h"
 #include "../../include/gui/utils.h"
 
 #include <fstream>
 #include <iostream>
+#include <set>
 #include <string>
 #include <vector>
 using namespace std;
@@ -14,7 +18,7 @@ using namespace std;
 // universitario (S7706624), il secondo e' il numero "globale" dello studente
 // (1, 2, 3, ...), un id a parte che serve per il programma
 
-bool studentExists(const int classId, const string studentId) {
+bool studentExists(const string &classId, const string &studentId) {
   ifstream readStudentsFile(studentsDataPath);
   // Di nuovo, se il file non esiste non esistono studenti, quindi ritorno false
   if (!readStudentsFile.is_open()) {
@@ -26,7 +30,7 @@ bool studentExists(const int classId, const string studentId) {
   // stesso id, e id classe (ogni studente puo' appartenere a piu' classi)
   while (getline(readStudentsFile, line)) {
     vector<string> splitLine = splitString(line, ',');
-    if (splitLine[1] == studentId && splitLine[2] == to_string(classId)) {
+    if (splitLine[1] == studentId && splitLine[2] == classId) {
       return true;
     }
   }
@@ -42,7 +46,7 @@ bool isValidStudentId(const string &studentId) {
     return false;
   }
 
-  for (size_t i = 1; i < studentId.length(); ++i) {
+  for (int i = 1; i < studentId.length(); i++) {
     if (!isdigit(studentId[i])) {
       return false;
     }
@@ -68,7 +72,8 @@ string inputStudentId() {
 
 bool isValidStudentName(const string &studentName) {
   // Il nome dello studente non puo' essere vuoto e non puo' superare i 20
-  if (studentName.empty() || studentName.length() > 20) {
+  if (studentName.length() < 4 || studentName.empty() ||
+      studentName.length() > 20) {
     return false;
   }
 
@@ -82,22 +87,7 @@ bool isValidStudentName(const string &studentName) {
   return true;
 }
 
-string inputStudentName() {
-  cout << "Insert the student name (max. 20 characters): ";
-
-  string studentName;
-  cin >> studentName;
-  cin.ignore();
-
-  while (!isValidStudentName(studentName)) {
-    cout << "Please enter a valid name:" << endl;
-    cin >> studentName;
-  }
-
-  return studentName;
-}
-
-int writeNewStudent(const int &classId, const string &studentId,
+int writeNewStudent(const string &classId, const string &studentId,
                     const string &studentName) {
   ofstream studentsFile(studentsDataPath, ios::app);
   if (!studentsFile.is_open()) {
@@ -107,72 +97,10 @@ int writeNewStudent(const int &classId, const string &studentId,
   // Ottiene l'ultimo ID dello studente e lo incrementa di 1 per il nuovo
   // studente
   int lastId = getLastId(studentsDataPath);
-  studentsFile << to_string(lastId + 1) + "," + to_string(classId) + "," +
-                      studentId + "," + studentName
+  studentsFile << to_string(lastId + 1) + "," + classId + "," + studentId +
+                      "," + studentName
                << endl;
   return 0;
-}
-
-void addNewStudent() {
-  const int classId = chooseClass();
-
-  string studentId = inputStudentId();
-
-  while (studentExists(classId, studentId)) {
-    cout << "Student " + studentId + " already exists in this class." << endl;
-    studentId = inputStudentId();
-  }
-
-  string studentName = inputStudentName();
-
-  if (writeNewStudent(classId, studentId, studentName) == -1) {
-    cout << "Error writing to file. Please try again." << endl;
-    return;
-  }
-
-  cout << "Student added successfully." << endl;
-}
-
-void listStudents() {
-  ifstream coursesFile(coursesDataPath);
-  string courseLine;
-
-  cout << endl << "============ Students ============" << endl;
-  // Itera attraverso ogni riga del file dei corsi
-  while (getline(coursesFile, courseLine)) {
-    vector<string> splitCourseLine = splitString(courseLine, ',');
-    cout << "- " + splitCourseLine[1] << endl;
-
-    ifstream classesFile(classesDataPath);
-    string classLine;
-
-    // Itera attraverso ogni riga del file delle classi
-    while (getline(classesFile, classLine)) {
-      vector<string> splitClassLine = splitString(classLine, ',');
-
-      // Se la classe appartiene al corso corrente, stampa le informazioni
-      if (splitClassLine[1] == splitCourseLine[0]) {
-        cout << "  |- Class " + splitClassLine[2] << endl;
-
-        ifstream studentsFile(studentsDataPath);
-        string studentLine;
-
-        // Itera attraverso ogni riga del file degli studenti
-        while (getline(studentsFile, studentLine)) {
-          vector<string> splitStudentLine = splitString(studentLine, ',');
-
-          // Se lo studente appartiene alla classe corrente, lo stampo
-          if (splitStudentLine[1] == splitClassLine[0]) {
-            cout << "    |- "
-                 << splitStudentLine[0] +
-                        " Student: ID = " + splitStudentLine[2] +
-                        ", Name = " + splitStudentLine[3]
-                 << endl;
-          }
-        }
-      }
-    }
-  }
 }
 
 int getClassIdFromStudentNumber(const int &studentNumber) {
@@ -207,6 +135,22 @@ string getStudentIdFromStudentNumber(const int &studentNumber) {
   return "";
 }
 
+string getStudentNumberFromId(const string &studentId) {
+  ifstream readStudentsFile(studentsDataPath);
+  if (!readStudentsFile.is_open()) {
+    return "";
+  }
+
+  string line;
+  while (getline(readStudentsFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+    if (splitLine[2] == studentId) {
+      return splitLine[0];
+    }
+  }
+  return "";
+}
+
 bool studentHasGrades(const int &studentNumber) {
   ifstream readGradesFile(gradesDataPath);
   string gradeLine;
@@ -220,4 +164,89 @@ bool studentHasGrades(const int &studentNumber) {
   }
 
   return false;
+}
+
+void drawStudentsList(Rectangle &panelRec, Rectangle &panelContentRec,
+                      Vector2 &panelScroll, Rectangle &panelView,
+                      int &studentIndex, string &currentOpenStudentId,
+                      float &iconRotation) {
+  set<string> uniqueStudentIds;
+
+  ifstream studentsFile(studentsDataPath);
+  string line;
+  int i = 0;
+
+  while (getline(studentsFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+
+    if (uniqueStudentIds.find(splitLine[2]) != uniqueStudentIds.end()) {
+      continue; // Skip if the student ID is already processed
+    }
+
+    uniqueStudentIds.insert(splitLine[2]);
+
+    if (GuiButton((Rectangle){tableOuterPadding,
+                              panelRec.y + panelScroll.y + i * 60,
+                              tableWidth - tableInnerPadding * 4, 50},
+                  NULL)) {
+      if (studentIndex == i) {
+        studentIndex = -1;
+      } else if (getStudentAverage(splitLine[0]) != "No grades.") {
+        studentIndex = i;
+        currentOpenStudentId = splitLine[2];
+      }
+    }
+
+    DrawRectangle(tableOuterPadding, panelRec.y + panelScroll.y + i * 60,
+                  panelContentRec.width - 10, 50,
+                  GetColor(sidebarBackgroundColor));
+
+    if (studentIndex != -1) {
+      DrawTextureEx(dropdownArrow,
+                    {tableOuterPadding + tableInnerPadding / 3,
+                     panelRec.y + panelScroll.y + 15 + i * 60},
+                    iconRotation, 1, GetColor(textColor));
+    } else {
+      DrawTextureEx(dropdownArrowRight,
+                    {tableOuterPadding + tableInnerPadding / 3,
+                     panelRec.y + panelScroll.y + 15 + i * 60},
+                    iconRotation, 1, GetColor(textColor));
+    }
+
+    DrawRegularText(splitLine[3], {tableOuterPadding + tableInnerPadding,
+                                   panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText(splitLine[2],
+                    {tableOuterPadding +
+                         (tableWidth - tableInnerPadding * 2) / 10 * 2.5f -
+                         boldTextPadding("ID") / 2,
+                     panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText(
+        getStudentAverage(splitLine[0]),
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+
+    // Icone di modifica e eliminazione
+    DrawTextureEx(note,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2) -
+                       (tableWidth - tableInnerPadding) / 20,
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    DrawTextureEx(del,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2),
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    i++;
+  }
+}
+
+void drawStudentsHeader() {
+  DrawBoldText("Name", {tableOuterPadding + tableInnerPadding, 155});
+  DrawBoldText("ID", {tableOuterPadding +
+                          (tableWidth - tableInnerPadding * 2) / 10 * 2.5f,
+                      155});
+  DrawBoldText(
+      "Average",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8, 155});
 }

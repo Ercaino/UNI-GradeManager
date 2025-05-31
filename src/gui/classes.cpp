@@ -1,15 +1,20 @@
 #include "../../include/gui/classes.h"
+#include "../../include/gui/colors.h"
 #include "../../include/gui/courses.h"
+#include "../../include/gui/globals.h"
+#include "../../include/gui/raygui.h"
 #include "../../include/gui/students.h"
 #include "../../include/gui/utils.h"
+#include "grades.h"
 
 #include <fstream>
 #include <iostream>
+#include <raylib.h>
 #include <string>
 #include <vector>
 using namespace std;
 
-bool classExists(const int &courseId, const string &className) {
+bool classExists(const string &courseId, const string &className) {
   ifstream classesFile(classesDataPath);
   // Come prima, se non esiste il file non ci possono essere classi quindi
   // ritorno false
@@ -22,7 +27,7 @@ bool classExists(const int &courseId, const string &className) {
     vector<string> splitLine = splitString(line, ',');
     // splitLine[0] è l'ID della classe, splitLine[1] è l'ID del corso e
     // splitLine[2] è il nome della classe
-    if (splitLine[1] == to_string(courseId) && splitLine[2] == className) {
+    if (splitLine[1] == courseId && splitLine[2] == className) {
       return true;
     }
   }
@@ -35,93 +40,45 @@ bool isValidClassName(const string &className) {
   return className.length() == 1 && className >= "A" && className <= "Z";
 }
 
-string inputClassName() {
-  cout << "Insert a letter for the class (A-Z): ";
-
-  string className;
-  cin >> className;
-  cin.ignore();
-
-  while (!isValidClassName(className)) {
-    cout << "Please enter a valid letter (A-Z):" << endl;
-    cin >> className;
-  }
-
-  return className;
-}
-
-int writeNewClass(const int &course, const string &className) {
+int writeNewClass(const string &courseId, const string &className) {
   ofstream classesFile(classesDataPath, ios::app);
   if (!classesFile.is_open()) {
     return -1;
   }
 
   int lastId = getLastId(classesDataPath);
-  classesFile << to_string(lastId + 1) + "," + to_string(course) + "," +
-                     className
+  classesFile << to_string(lastId + 1) + "," + courseId + "," + className
               << endl;
   return 0;
 }
 
-void addNewClass() {
-  const int courseId = chooseCourse();
-
-  string className = inputClassName();
-
-  while (classExists(courseId, className)) {
-    cout << "Class " + className + " already exists in this course." << endl;
-    className = inputClassName();
-  }
-
-  ofstream classesFile(classesDataPath, ios::app);
-  int lastId = getLastId(classesDataPath);
-  classesFile << to_string(lastId + 1) + "," + to_string(courseId) + "," +
-                     className
-              << endl;
-
-  cout << "Class " + className + " added successfully." << endl;
-}
-
-void listClasses() {
-  ifstream coursesFile(coursesDataPath);
-  string courseLine;
-
-  cout << endl << "============ Classes ============" << endl;
-  // Legge ogni corso
-  while (getline(coursesFile, courseLine)) {
-    vector<string> splitCourseLine = splitString(courseLine, ',');
-    cout << "- " + splitCourseLine[1] << endl;
-
-    ifstream readClassFile(
-        classesDataPath); // Il file va ridichiarato ad ogni iterazione o il
-                          // flusso del file non funziona correttamente
-    string classLine;
-    // Per ogni corso, legge ogni classe
-    while (getline(readClassFile, classLine)) {
-      vector<string> splitClassLine = splitString(classLine, ',');
-      // Se l'ID del corso della classe corrisponde all'ID del corso allora la
-      // stampo
-      if (splitClassLine[1] == splitCourseLine[0]) {
-        cout << "  |- " << splitClassLine[0] + ". Class " + splitClassLine[2]
-             << endl;
-      }
-    }
-  }
-}
-
 // Funzione per ottenere l'ID del corso da un ID di classe
-int getCourseIdFromClassId(const int &classId) {
+string getCourseIdFromClassId(const string &classId) {
   ifstream classesFile(classesDataPath);
   string line;
 
   while (getline(classesFile, line)) {
     vector<string> splitLine = splitString(line, ',');
-    if (stoi(splitLine[0]) == classId) {
-      return stoi(splitLine[1]);
+    if (splitLine[0] == classId) {
+      return splitLine[1];
     }
   }
 
-  return -1;
+  return "";
+}
+
+string getClassNameFromId(const string &classId) {
+  ifstream classesFile(classesDataPath);
+  string line;
+
+  while (getline(classesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+    if (splitLine[0] == classId) {
+      return splitLine[2];
+    }
+  }
+
+  return "";
 }
 
 bool classHasStudents(const int &classId) {
@@ -140,32 +97,63 @@ bool classHasStudents(const int &classId) {
   return false;
 }
 
-int chooseClass(const int &mode) {
-  listClasses();
-  switch (mode) {
-  case 1:
-    cout << "Choose the class to which you want to add a student: ";
-    break;
-  case 2:
-    cout << "Choose the class to which you want to add grades: ";
-    break;
-  case 3:
-    cout << "Choose the class for which you want to view grades and students: ";
-    break;
-  case 4:
-    cout << "Choose the class for which you want to calculate the average "
-            "grade: ";
-    break;
-  }
-  int choice;
-  cin >> choice;
+void drawClassesList(Rectangle &panelRec, Rectangle &panelContentRec,
+                     Vector2 &panelScroll, Rectangle &panelView) {
+  GuiScrollPanel(panelRec, NULL, panelContentRec, &panelScroll, &panelView);
+  BeginScissorMode(panelView.x, panelView.y, panelView.width, panelView.height);
 
-  while (choice < 1 || choice > getLastId(classesDataPath)) {
-    cout << "Please enter a valid class Id: ";
-    cin.clear();
-    cin.ignore();
-    cin >> choice;
-  }
+  // Righe della tabella
+  int i = 0;
+  ifstream classesFile(classesDataPath);
+  string line;
+  while (getline(classesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+    DrawRectangle(
+        panelRec.x + panelScroll.x, panelRec.y + panelScroll.y + i * 60,
+        panelContentRec.width - 10, 50, GetColor(sidebarBackgroundColor));
 
-  return choice;
+    DrawRegularText(
+        splitLine[0].c_str(),
+        {tableOuterPadding + tableInnerPadding + regularTextPadding("ID") / 2,
+         panelRec.y + panelScroll.y + 17 + i * 60});
+    DrawRegularText(
+        getCourseNameFromId(splitLine[1]),
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+    DrawRegularText(splitLine[2].c_str(),
+                    {tableOuterPadding +
+                         (tableWidth - tableInnerPadding * 2) / 10 * 5 +
+                         boldTextPadding("Section") / 2,
+                     panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText(
+        getClassAverage(splitLine[0]),
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawTextureEx(note,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2) -
+                       (tableWidth - tableInnerPadding) / 20,
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    DrawTextureEx(del,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2),
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    i++;
+  }
+  EndScissorMode();
+}
+
+void drawClassesHeader() {
+  DrawBoldText("ID", {tableOuterPadding + tableInnerPadding, 155});
+  DrawBoldText(
+      "Course",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10, 155});
+  DrawBoldText(
+      "Section",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 5, 155});
+  DrawBoldText(
+      "Average",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8, 155});
 }

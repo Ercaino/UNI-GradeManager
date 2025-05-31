@@ -1,220 +1,182 @@
 #include "../../include/gui/grades.h"
-#include "../../include/gui/classes.h"
-#include "../../include/gui/courses.h"
-#include "../../include/gui/students.h"
+#include "../../include/gui/raygui.h"
 #include "../../include/gui/utils.h"
+#include "classes.h"
+#include "courses.h"
+#include "students.h"
 #include <fstream>
 #include <iostream>
+#include <raylib.h>
+#include <sstream>
 #include <string>
 using namespace std;
 
-int chooseStudent(bool showingGrades) {
-  int choice;
-  listStudents();
-  if (showingGrades) {
-    cout << "Choose the student for which you want to view the average grade: ";
-  } else {
-    cout << "Choose the student to which you want to add grades: ";
-  }
+bool isValidGrade(const string &grade) {
+  istringstream stream(grade);
+  string word;
 
-  cin >> choice;
-  cin.ignore();
-
-  while (choice < 1 || choice > getLastId(studentsDataPath)) {
-    cout << "Please enter a valid student number: ";
-    cin >> choice;
-    cin.ignore();
-  }
-
-  return choice;
-}
-
-int inputGrade() {
-  int grade;
-
-  cin >> grade;
-
-  while (grade > 30 || grade < 0) {
-    cout << "Please enter a valid grade (0-30): ";
-    cin >> grade;
-  }
-
-  return grade;
-}
-
-void addGradesToStudent() {
-  const int studentNumber = chooseStudent();
-  const string studentId = getStudentIdFromStudentNumber(studentNumber);
-
-  cout << "Insert the grade for student " << studentId << ": ";
-  int grade = inputGrade();
-  int classId = getClassIdFromStudentNumber(studentNumber);
-  int courseId = getCourseIdFromClassId(classId);
-
-  ofstream writeGradesFile(gradesDataPath, ios::app);
-  writeGradesFile << to_string(courseId) + "," + to_string(classId) + "," +
-                         to_string(studentNumber) + "," + to_string(grade)
-                  << endl;
-
-  cout << "Grade added successfully for student " << studentId << "." << endl;
-}
-
-void addGradesToClass() {
-  int classId = chooseClass(2);
-  int courseId = getCourseIdFromClassId(classId);
-
-  ifstream readStudentsFile(studentsDataPath);
-  string studentLine;
-
-  if (!classHasStudents(classId)) {
-    cout << "There are no students in this class." << endl;
-    return;
-  }
-
-  while (getline(readStudentsFile, studentLine)) {
-    vector<string> splitStudentLine = splitString(studentLine, ',');
-
-    if (stoi(splitStudentLine[1]) == classId) {
-      int studentNumber = stoi(splitStudentLine[0]);
-      string studentId = splitStudentLine[2];
-
-      cout << "Insert the grade for student " << studentId << ": ";
-      int grade = inputGrade();
-
-      ofstream writeGradesFile(gradesDataPath, ios::app);
-      writeGradesFile << to_string(courseId) + "," + to_string(classId) + "," +
-                             to_string(studentNumber) + "," + to_string(grade)
-                      << endl;
-
-      cout << "Grade added successfully for student " << studentId << "."
-           << endl;
-    }
-  }
-}
-
-void listStudentsAndGradesInAClass() {
-  int classId = chooseClass(3);
-  if (!classHasStudents(classId)) {
-    cout << "There are no students in this class." << endl;
-    return;
-  }
-
-  ifstream readStudentsFile(studentsDataPath);
-  string studentLine;
-
-  cout << endl << "============ Students and Grades ============" << endl;
-  // Itera sul file degli studenti
-  while (getline(readStudentsFile, studentLine)) {
-    vector<string> splitStudentLine = splitString(studentLine, ',');
-
-    // Controlla se lo studente appartiene alla classe scelta
-    if (stoi(splitStudentLine[1]) == classId) {
-      int studentNumber = stoi(splitStudentLine[0]);
-      string studentId = splitStudentLine[2];
-
-      // Controlla se lo studente ha voti
-      if (!studentHasGrades(studentNumber)) {
-        continue;
+  while (stream >> word) {
+    // Check if the word is a number
+    bool isNumber = true;
+    for (char c : word) {
+      if (!isdigit(c)) {
+        isNumber = false;
+        break;
       }
+    }
 
-      // Se ha voti li stampo
-      cout << "Student ID: " << studentId << endl;
-      cout << "    |- Grades: ";
+    if (isNumber) {
+      // Convert the word to an integer
+      int number = stoi(word);
 
-      ifstream readGradesFile(gradesDataPath);
-      string gradeLine;
-
-      // Itera sul file dei voti
-      while (getline(readGradesFile, gradeLine)) {
-        vector<string> splitGradeLine = splitString(gradeLine, ',');
-
-        // E cerco se il voto appartiene allo studente corrente
-        if (stoi(splitGradeLine[2]) == studentNumber) {
-          int studentNumber = stoi(splitGradeLine[2]);
-          string studentId = getStudentIdFromStudentNumber(studentNumber);
-          int grade = stoi(splitGradeLine[3]);
-
-          cout << to_string(grade) + " ";
-        }
+      // Check if the number is in the range [0, 30]
+      if (number >= 0 && number <= 30) {
+        return true; // Valid number found
       }
-      cout << endl;
     }
   }
+
+  return false; // No valid number found
 }
 
-void showAverageForStudent() {
-  int studentNumber = chooseStudent();
-  if (!studentHasGrades(studentNumber)) {
-    cout << "This student has no grades." << endl;
-    return;
-  }
-
-  ifstream readGradesFile(gradesDataPath);
-  string gradeLine;
+string getCourseAverage(const string &courseId) {
+  ifstream gradesFile(gradesDataPath);
+  string line;
   int totalGrades = 0;
-  int numberOfGrades = 0;
+  double numberOfGrades = 0;
 
-  while (getline(readGradesFile, gradeLine)) {
-    vector<string> splitGradeLine = splitString(gradeLine, ',');
+  while (getline(gradesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
 
-    if (stoi(splitGradeLine[2]) == studentNumber) {
-      totalGrades += stoi(splitGradeLine[3]);
+    if (splitLine[0] == courseId) {
+      totalGrades += stoi(splitLine[3]);
       numberOfGrades++;
     }
   }
 
-  double average = static_cast<double>(totalGrades) / numberOfGrades;
-  cout << "Average grade for student "
-       << getStudentIdFromStudentNumber(studentNumber) << ": " << average
-       << endl;
-}
-
-void showAverageForClass() {
-  int classId = chooseClass(4);
-  if (!classHasStudents(classId)) {
-    cout << "There are no students in this class." << endl;
-    return;
+  if (numberOfGrades == 0) {
+    return "No grades.";
   }
 
-  ifstream readGradesFile(gradesDataPath);
-  string gradeLine;
-  int totalGrades = 0;
+  double average = totalGrades / numberOfGrades;
+  ostringstream oss;
+  oss.precision(2);
+  oss << fixed << average;
+  return oss.str();
+}
+
+string getClassAverage(const string &classId) {
+  ifstream gradesFile(gradesDataPath);
+  string line;
+  double totalGrades = 0;
   int numberOfGrades = 0;
 
-  while (getline(readGradesFile, gradeLine)) {
-    vector<string> splitGradeLine = splitString(gradeLine, ',');
+  while (getline(gradesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
 
-    if (stoi(splitGradeLine[1]) == classId) {
-      totalGrades += stoi(splitGradeLine[3]);
+    if (splitLine[1] == classId) {
+      totalGrades += stoi(splitLine[3]);
       numberOfGrades++;
     }
   }
 
-  double average = static_cast<double>(totalGrades) / numberOfGrades;
-  cout << "Average grade for class ID " << classId << ": " << average << endl;
-}
-
-void showAverageForCourse() {
-  int courseId = chooseCourse();
-  if (!courseHasClasses(courseId)) {
-    cout << "There are no classes for this course." << endl;
-    return;
+  if (numberOfGrades == 0) {
+    return "No grades.";
   }
 
-  ifstream readGradesFile(gradesDataPath);
-  string gradeLine;
-  int totalGrades = 0;
+  double average = static_cast<double>(totalGrades) / numberOfGrades;
+  ostringstream oss;
+  oss.precision(2);
+  oss << fixed << average;
+  return oss.str();
+}
+
+string getStudentAverage(const string &studentId) {
+  ifstream gradesFile(gradesDataPath);
+  string line;
+  double totalGrades = 0;
   int numberOfGrades = 0;
 
-  while (getline(readGradesFile, gradeLine)) {
-    vector<string> splitGradeLine = splitString(gradeLine, ',');
+  while (getline(gradesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
 
-    if (stoi(splitGradeLine[0]) == courseId) {
-      totalGrades += stoi(splitGradeLine[3]);
+    if (splitLine[2] == studentId) {
+      totalGrades += stoi(splitLine[3]);
       numberOfGrades++;
     }
   }
 
+  if (numberOfGrades == 0) {
+    return "No grades.";
+  }
+
   double average = static_cast<double>(totalGrades) / numberOfGrades;
-  cout << "Average grade for course ID " << courseId << ": " << average << endl;
+  ostringstream oss;
+  oss.precision(2);
+  oss << fixed << average;
+  return oss.str();
+}
+
+int countStudentGrades(const string &studentId) {
+  ifstream gradesFile(gradesDataPath);
+  string line;
+  int count = 0;
+
+  while (getline(gradesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+    if (splitLine[2] == getStudentNumberFromId(studentId)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+void drawStudentGrades(const int &studentIndex,
+                       const string &currentOpenStudentId, Rectangle &panelRec,
+                       Rectangle &panelContentRec, Vector2 &panelScroll,
+                       Rectangle &panelView) {
+
+  ifstream gradesFile(gradesDataPath);
+  string line;
+  int i = studentIndex + 1;
+
+  while (getline(gradesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+
+    if (splitLine[2] != getStudentNumberFromId(currentOpenStudentId)) {
+      continue; // Skip if the student ID does not match
+    }
+
+    DrawRectangle(tableOuterPadding, panelRec.y + panelScroll.y + i * 60,
+                  panelContentRec.width - 10, 50,
+                  GetColor(sidebarBackgroundColor));
+
+    DrawRegularText("Course: " + getCourseNameFromId(splitLine[0]),
+                    {tableOuterPadding + tableInnerPadding,
+                     panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText("Section: " + getClassNameFromId(splitLine[1]),
+                    {tableOuterPadding +
+                         (tableWidth - tableInnerPadding * 2) / 10 * 2.5f -
+                         boldTextPadding("ID") / 2,
+                     panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText(
+        "Grade: " + splitLine[3],
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 4,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+
+    // Icone di modifica e eliminazione
+    DrawTextureEx(note,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2) -
+                       (tableWidth - tableInnerPadding) / 20,
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    DrawTextureEx(del,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2),
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    i++;
+  }
 }

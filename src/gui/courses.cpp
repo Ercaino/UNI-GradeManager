@@ -1,8 +1,13 @@
 #include "../../include/gui/courses.h"
 #include "../../include/gui/classes.h"
+#include "../../include/gui/colors.h"
+#include "../../include/gui/globals.h"
+#include "../../include/gui/raygui.h"
 #include "../../include/gui/utils.h"
+#include "grades.h"
 #include <fstream>
 #include <iostream>
+#include <raylib.h>
 #include <string>
 #include <vector>
 using namespace std;
@@ -35,19 +40,6 @@ bool isValidCourseName(const string &courseName) {
          courseName.length() >= 3 && courseName.find(',') == string::npos;
 }
 
-string inputCourseName() {
-
-  string courseName;
-  getline(cin, courseName);
-
-  while (!isValidCourseName(courseName)) {
-    cout << "Please enter a valid name (max. 50 char. and don't use commas): ";
-    getline(cin, courseName);
-  }
-
-  return courseName;
-}
-
 int writeNewCourse(const string &courseName) {
   ofstream courseFile(coursesDataPath, ios::app);
   if (!courseFile.is_open()) {
@@ -58,26 +50,6 @@ int writeNewCourse(const string &courseName) {
   int lastId = getLastId(coursesDataPath);
   courseFile << to_string(lastId + 1) + "," + courseName << endl;
   return 0;
-}
-
-void addNewCourse() {
-  string line;
-  string courseName;
-
-  courseName = inputCourseName();
-
-  while (courseExists(courseName)) {
-    cout << "Course " + courseName +
-                " already exists. Please enter a new name: ";
-    courseName = inputCourseName();
-  }
-
-  if (writeNewCourse(courseName) == -1) {
-    cout << "Error writing to file. Please try again." << endl;
-    return;
-  }
-
-  cout << "Course added successfully." << endl;
 }
 
 string listCourses() {
@@ -94,14 +66,14 @@ string listCourses() {
 }
 
 // Funzione per ottenere il nome del corso dato l'ID
-string getCourseNameFromId(const int &courseId) {
+string getCourseNameFromId(const string &courseId) {
   ifstream coursesFile(coursesDataPath);
   string line;
 
   while (getline(coursesFile, line)) {
     // Legge ogni riga e returna il nome del corso se l'ID corrisponde
     vector<string> splitLine = splitString(line, ',');
-    if (splitLine[0] == to_string(courseId)) {
+    if (splitLine[0] == courseId) {
       return splitLine[1];
     }
   }
@@ -124,19 +96,56 @@ bool courseHasClasses(const int &courseId) {
   return false;
 }
 
-int chooseCourse() {
-  listCourses();
-  cout << "Choose the course to which you want to add a class: ";
+void drawCoursesList(Rectangle &panelRec, Rectangle &panelContentRec,
+                     Vector2 &panelScroll, Rectangle &panelView) {
+  GuiScrollPanel(panelRec, NULL, panelContentRec, &panelScroll, &panelView);
+  BeginScissorMode(panelView.x, panelView.y, panelView.width, panelView.height);
 
-  int choice;
-  cin >> choice;
+  // Righe della tabella
+  int i = 0;
+  ifstream coursesFile(coursesDataPath);
+  string line;
 
-  // Se l'utente inserisce un numero piu' alto dell'ultimo ID del corso o minore
-  // di 1, richiedo l'input
-  while (choice < 1 || choice > getLastId(coursesDataPath)) {
-    cout << "Please enter a valid course number: ";
-    cin >> choice;
+  while (getline(coursesFile, line)) {
+    vector<string> splitLine = splitString(line, ',');
+    DrawRectangle(
+        panelRec.x + panelScroll.x, panelRec.y + panelScroll.y + i * 60,
+        panelContentRec.width - 10, 50, GetColor(sidebarBackgroundColor));
+
+    DrawRegularText(splitLine[0], {tableOuterPadding + tableInnerPadding +
+                                       regularTextPadding("ID") / 2,
+                                   panelRec.y + panelScroll.y + 17 + i * 60});
+    DrawRegularText(
+        splitLine[1],
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+
+    DrawRegularText(
+        getCourseAverage(splitLine[0]),
+        {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8,
+         panelRec.y + panelScroll.y + 15 + i * 60});
+
+    // Icone di modifica e eliminazione
+    DrawTextureEx(note,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2) -
+                       (tableWidth - tableInnerPadding) / 20,
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    DrawTextureEx(del,
+                  {tableOuterPadding + (tableWidth - tableInnerPadding * 2),
+                   panelRec.y + panelScroll.y + 15 + i * 60},
+                  0, 1, GetColor(textColor));
+    i++;
   }
+  EndScissorMode();
+}
 
-  return choice;
+void drawCoursesHeader() {
+  DrawBoldText("ID", {tableOuterPadding + tableInnerPadding, 155});
+  DrawBoldText(
+      "Course name",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10, 155});
+  DrawBoldText(
+      "Average",
+      {tableOuterPadding + (tableWidth - tableInnerPadding * 2) / 10 * 8, 155});
 }

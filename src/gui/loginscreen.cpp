@@ -5,7 +5,7 @@
 
 void loginScreen(AppState &currentState, bool &quit) {
   DrawTextEx(
-      customfont, "UNI - Manage System",
+      poppinsRegular, "UNI - Manage System",
       (Vector2){static_cast<float>(screenWidth / 2 -
                                    MeasureText("UNI - Manage System", 30) / 2),
                 static_cast<float>(screenHeight / 4 + 150)},

@@ -1,4 +1,5 @@
 #include "../../include/gui/globals.h"
+#include <raylib.h>
 
 // Textures
 Texture2D logoImage;
@@ -8,9 +9,13 @@ Texture2D note;
 Texture2D more;
 Texture2D percent;
 Texture2D add;
+Texture2D dropdownArrow;
+Texture2D dropdownArrowRight;
 
-// Font
-Font customfont;
+// Fonts
+Font poppinsRegular;
+Font poppinsBlack;
+Font poppinsBold;
 
 void loadResources() {
   logoImage = LoadTexture("../assets/Logo-edu.png");
@@ -20,6 +25,10 @@ void loadResources() {
   more = LoadTexture("../assets/more.png");
   percent = LoadTexture("../assets/percent.png");
   add = LoadTexture("../assets/add.png");
+  dropdownArrow = LoadTexture("../assets/dropdown-arrow.png");
+  dropdownArrowRight = LoadTexture("../assets/dropdown-arrow-right.png");
 
-  customfont = LoadFontEx("../assets/Poppins-Regular.ttf", 20, 0, 0);
+  poppinsRegular = LoadFontEx("../assets/Poppins-Regular.ttf", 24, 0, 0);
+  poppinsBlack = LoadFontEx("../assets/Poppins-Black.ttf", 50, 0, 0);
+  poppinsBold = LoadFontEx("../assets/Poppins-Bold.ttf", 35, 0, 0);
 }

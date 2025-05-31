@@ -9,5 +9,6 @@ const unsigned int textColor = 0xcdd6f4ff;
 const unsigned int buttonBackgroundColor = 0x11111bff;
 const unsigned int buttonBorderColor = 0xeba0acff;
 const unsigned int coverColor = 0x11111bb5;
+const unsigned int errorColor = 0xf38ba8ff;
 
 #endif

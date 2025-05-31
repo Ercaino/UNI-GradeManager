@@ -1,6 +1,9 @@
 #include "../../include/gui/utils.h"
+#include "../../include/gui/colors.h"
+#include "../../include/gui/globals.h"
 #include <fstream>
 #include <iostream>
+#include <raylib.h>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -64,4 +67,31 @@ void deleteLine(const string &filePath, int lineNumber) {
   outputFile.close();
 
   cout << "Line " << lineNumber << " has been deleted successfully.\n";
+}
+
+void DrawRegularText(const string &text, Vector2 position, float fontSize,
+                     unsigned int color) {
+  DrawTextEx(poppinsRegular, text.c_str(), position, fontSize, 1,
+             GetColor(color));
+};
+
+void DrawBoldText(const string &text, Vector2 position, float fontSize,
+                  unsigned int color) {
+  DrawTextEx(poppinsBold, text.c_str(), position, fontSize, 1, GetColor(color));
+};
+
+void DrawBlackText(const string &text, Vector2 position, float fontSize,
+                   unsigned int color) {
+  DrawTextEx(poppinsBlack, text.c_str(), position, fontSize, 1,
+             GetColor(color));
+};
+
+float regularTextPadding(const string &text) {
+  return MeasureTextEx(poppinsRegular, text.c_str(), regularFontSize, 1).x;
+}
+float boldTextPadding(const string &text) {
+  return MeasureTextEx(poppinsBold, text.c_str(), boldFontSize, 1).x;
+}
+float blackTextPadding(const string &text) {
+  return MeasureTextEx(poppinsBlack, text.c_str(), blackFontSize, 1).x;
 }

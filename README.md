@@ -55,7 +55,7 @@ Each module consists of:
 <p float="left">
   <p align="left">
     <!-- [![Static Badge](https://img.shields.io/badge/Structure-_?style=for-the-badge&color=blue)](./STRUCTURE.md) -->
-    <a href="./STRUCTURE.md"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=bf71ff"></a>
+    <a href="./STRUCTURE.txt"><img src="https://img.shields.io/badge/Structure-_?style=for-the-badge&color=bf71ff"></a>
     <a href="./assets/documentation/TreeUpdate.md"><img src="https://img.shields.io/badge/Update.str-_?style=for-the-badge&color=bf71ff"></a>
   </p>
   <p align="right">
